@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-PT" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scaleable=no"/>
+        <meta name="author" content="Eugenio Sergio Tomas">
+        <meta name="description" content="Todo material disponibilizado de forma totalmente facilitada">
+        <meta name="keywords" content="matxaunas, testes, mini-testes, aulas, avaliacao, documentos">
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <title>HOME_Admin</title>
+    </head>
+    <body>
+
+        <nav class="navbar-nav navbar-expand  mb-5">
+            <a href="#" class="navbar-brand text-info" id="estiloNav">
+                <h1>Admin</h1>  
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-a"
+                    aria-controls="false" aria-label="Alternar" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar" id="navbar-a">
+                <a href="/adminHome" class="text-info">
+                    <h2>HOME</h2>
+                </a>
+            </div>
+        </nav>
+
+        <main class="mt-5 mb-5">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-3">
+                        <a href="" class="btn btn-info form-control p-3 menuButtom">Admin</a>
+                    </div>
+             
+                    <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 mb-3 mt-5">
+                        <form th:object="${tipo_sector}" th:action="@{/cadastarTipoSector}" method="post">
+                            <div class="p-2 bg-info text-light text-center figure-caption">Cadastro de Sector</div>
+                            <fieldset><br>
+                             
+                            <label for="nomeSector">Nome do Sector</label><br>
+                            <input type="text" name="nome" th:field="*{nome}" placeholder="Nome do Sector" id="nomeSector" required class="form-control border-info"><br>
+
+                            <label for="descricao">Responsavel</label><br>
+                            <input type="text" name="responsavel" th:field="*{responsavel}" placeholder="Responsavel" id="responsavel" required class="form-control border-info"><br>
+                   
+                            <label for="descricao">Tipo de Acesso</label><br>
+                            <select name="tipo_acesso" th:field="*{tipo_acesso}" class="form-control">
+                                <option disabled selected value="Null">
+                                    Tipo de acesso
+                                </option>
+                                <option value="DAF">
+                                    DAF
+                                </option>
+                                <option value="UGEA">
+                                    UGEA
+                                </option>
+                                <option value="SECTOR">
+                                    SECTOR | REPARTICAO | DEPARTAMENTO
+                                </option>
+                            </select><br><br>
+                                
+                            <button type="submit" id="gerarCodigo" class="btn btn-outline-success">Cadastrar</button><br><br>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 mb-3 mt-5">
+                        <form th:object="${sector}" th:action="@{/cadastarSector}" method="post">
+                            <div class="p-2 bg-info text-light text-center figure-caption">Cadastro do Utilizador</div>
+                            <fieldset><br>
+                            
+                            <label for="sector">Nome do Sector</label><br>
+                            <select id="sector" class="form-control" name="cod_tipo_sector">
+                                <option disabled selected value="0">Sector</option>
+                                <option th:each="tipo : ${lista_sectores}" th:text="${tipo.nome}" th:value="${tipo.cod_tipo_sector}">
+                                    
+                                </option>
+                            </select><br>
+                            
+                            <label for="username">Username</label><br>
+                            <input type="text" name="username" th:field="*{username}" placeholder="Username" id="username" class="form-control border-info" required><br>
+                   
+                            <label for="senha">Senha</label><br>
+                            <input type="password" name="senha" th:field="*{senha}" placeholder="Senha" id="senha" class="form-control border-info" required><br>
+                   
+                            <input type="submit" value="cadastrar" class="btn btn-outline-success" id="cadastrar_sector">
+                            </fieldset>
+                        </form> 
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer th:replace="fragmento/fragmento :: footer"></footer>
+
+        <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.js"></script>
+        <script type="text/javascript" src="/js/style.js"></script>
+    </body>
+</html>

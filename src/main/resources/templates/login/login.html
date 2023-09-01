@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-PT" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scaleable=no"/>
+        <meta name="author" content="Eugenio Sergio Tomas">
+        <meta name="description" content="Todo material disponibilizado de forma totalmente facilitada">
+        <meta name="keywords" content="matxaunas, testes, mini-testes, aulas, avaliacao, documentos">
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <title>HOME_Sectoe</title>
+    </head>
+    <body>
+
+        <form id="formLogin" class=" border-dark border-3" th:object="${sector}" method="post" th:action="@{/efectuarLogin}">
+            <div id="formLoginLegend" class="bg-info text-light mb-2">
+                <legend class="text-center">Login</legend>
+            </div>
+           
+            
+            <div id="formLoginDados">
+            <label for="username">Username</label><br>
+            <input type="text" name="username" placeholder="Username" id="username" class="form-control border-info"><br>
+
+            <label for="senha">Senha</label><br>
+            <input type="password" name="senha" id="senha" class="form-control border-info"><br><br>
+
+
+            <input type="submit" value="Login" class="btn btn-outline-info form-control">
+            <br><br>
+             <span th:text="${alerta}" th:if="${alerta != null}" class="text-danger text-center"></span>
+            </div>
+        </form> 
+
+
+        <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.js"></script>
+        <script type="text/javascript" src="/js/style.js"></script>
+    </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-PT" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scaleable=no"/>
+        <meta name="author" content="Eugenio Sergio Tomas">
+        <meta name="description" content="Todo material disponibilizado de forma totalmente facilitada">
+        <meta name="keywords" content="matxaunas, testes, mini-testes, aulas, avaliacao, documentos">
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <title>HOME_Sector</title>
+    </head>
+    <body>
+
+        <nav class="navbar-nav navbar-expand  mb-5">
+            <a href="#" class="navbar-brand text-info" id="estiloNav">
+                <h1>Sector</h1>  
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-a"
+                    aria-controls="false" aria-label="Alternar" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar" id="navbar-a">
+                <a href="#" class="text-info">
+                    <h2>HOME</h2>
+                </a>
+            </div>
+        </nav>
+
+        <main class="mt-5 mb-5">
+            <div class="container">
+                <div class="row mb-2">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
+                        <a href="" class="btn btn-info form-control p-3 menuButtom">Solicitacoes Enviadas</a>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12  mb-3">
+<!--                        <div class="marcar mr-5">
+                            <input type="radio" name="resultado" id="deferido">
+                            <label for="deferido" class="mr-1 ml-1">Deferida</label>
+
+                            <input type="radio" name="resultado" id="indeferido" class="mr-1 ml-1">
+                            <label for="indeferido" >Indeferida</label>
+                        </div>-->
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mb-3">
+<!--                        <div class="pesquisar">
+                            <input type="search" name="pesquisar" class="form-control" id="pesquisar" placeholder="Buscar...">
+                        </div>-->
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
+                        <a href="/solicitacao" class="btn btn-outline-success">Nova Solicitacao</a>
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 mb-3" th:if="${sol}" th:each="sol : ${sol}">
+                        <div class="card">
+                            <div class="card-header bg-info text-light">
+                                <div class="card-title text-center" th:text="${sol.assunto}">
+                                    AQUISICAO DE BUSTO DE PAU PRETO
+                                </div>
+                            </div>
+                            <div class="card-body text-justify" th:text="${sol.descricao}">
+                                <p class="card-text">
+                                    No ambito da cerimonia da abertura oficial do ano letivo 2023, a 
+                                    ser realizada no dia 25 de Abril do corrente ano, vimos poe este eio solicitar
+                                    a V.Excia. a autorizacao de aquisicao de 4 bustos, dos quais 2 de rosto feminino
+                                    e 2 de rosto masculino, de pau preto, para serem oferecidos aos convidados de honra.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-2">
+                                        <a th:href="${'/solicitacoes/'+sol.documento}" class="btn btn-outline-info form-control" download>Documento</a>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-2" th:if="${sol.status} == 'pendente'">
+                                        <h6 class="btn btn-secondary form-control" th:text="${sol.status}">Pendente</h6>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-2" th:if="${sol.status} == 'true'">
+                                        <h6 class="btn btn-success form-control">Deferido</h6>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-2" th:unless="${sol.status}">
+                                        <h6 class="btn btn-danger form-control mb-2">Indeferido</h6>
+                                        <h6 class="form-control mb-1">Motivo</h6>
+                                        <p th:text="${sol.comentario}">
+                                            
+                                        </p>
+                                    </div>
+
+
+                                </div>
+                                <hr>
+                                <div class="text-muted">
+                                    <small th:text="${sol.data}">Pemba, 21 de Marco de 2023</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+    </main>
+
+    <footer th:replace="fragmento/fragmento :: footer"></footer>
+
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/style.js"></script>
+</body>
+</html>

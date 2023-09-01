@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.ugea_ugea_jar_0.0.1-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.ugea.controller.Cedulamodificada</class>
+    <class>com.ugea.controller.Cedularequerida</class>
+    <class>com.ugea.controller.Prefuncionario</class>
+    <class>com.ugea.controller.Funcionario</class>
+    <class>com.ugea.controller.Cedulaconfirmada</class>
+    <class>com.ugea.model.Tiposector_1</class>
+    <class>com.ugea.model.Solicitacao_1</class>
+    <class>com.ugea.model.Sector_1</class>
+    <class>com.ugea.model.Propostadeferida</class>
+    <class>com.ugea.model.Proposta</class>
+    <class>com.ugea.model.Solicitacao</class>
+    <class>com.ugea.model.Solicitacaodeferida</class>
+    <class>com.ugea.model.Propostaindeferida</class>
+    <class>com.ugea.model.Solicitacaoindeferida</class>
+    <class>com.ugea.model.Tiposector</class>
+    <class>com.ugea.model.Sector</class>
+    <class>com.ugea.model.TipoSector</class>
+    <class>com.ugea.model.PropostaDeferida</class>
+    <class>com.ugea.model.PropostaIndeferida</class>
+    <class>com.ugea.model.SolicitacaoIndeferida</class>
+    <class>com.ugea.model.SolicitacaoDeferida</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sgcp?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="eugenio"/>
+    </properties>
+  </persistence-unit>
+</persistence>

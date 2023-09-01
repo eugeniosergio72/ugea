@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-PT" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scaleable=no"/>
+        <meta name="author" content="Eugenio Sergio Tomas">
+        <meta name="description" content="Todo material disponibilizado de forma totalmente facilitada">
+        <meta name="keywords" content="matxaunas, testes, mini-testes, aulas, avaliacao, documentos">
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <title>HOME_ERRO</title>
+    </head>
+    <body>
+
+        <nav class="navbar-nav navbar-expand  mb-5">
+            <a href="#" class="navbar-brand text-info" id="estiloNav">
+                <h1>Erro</h1>  
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-a"
+                    aria-controls="false" aria-label="Alternar" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar" id="navbar-a">
+                <a href="/sector" class="text-info">
+                    <h2>HOME</h2>
+                </a>
+            </div>
+        </nav>
+
+        <main class="mt-5 mb-5">
+            <div class="container">
+                <div class="row mb-5">
+                    <h1 class="text-center text-danger">
+                        Contacte o Admin! (+258) 845203791.
+                    </h1>
+                </div>
+            </div>
+        </main>
+
+        <footer th:replace="fragmento/fragmento :: footer"></footer>
+
+        <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.js"></script>
+        <script type="text/javascript" src="/js/style.js"></script>
+    </body>
+</html>

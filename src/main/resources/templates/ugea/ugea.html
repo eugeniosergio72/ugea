@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-PT" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scaleable=no"/>
+        <meta name="author" content="Eugenio Sergio Tomas">
+        <meta name="description" content="Todo material disponibilizado de forma totalmente facilitada">
+        <meta name="keywords" content="matxaunas, testes, mini-testes, aulas, avaliacao, documentos">
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <title>HOME_UGEA</title>
+    </head>
+    <body>
+
+        <nav class="navbar-nav navbar-expand  mb-5">
+            <a href="#" class="navbar-brand text-info" id="estiloNav">
+                <h1>UGEA</h1>  
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-a"
+                    aria-controls="false" aria-label="Alternar" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar" id="navbar-a">
+                <a href="/ugea" class="text-info">
+                    <h2>HOME</h2>
+                </a>
+            </div>
+        </nav>
+
+        <main class="mt-5 mb-5">
+            <div class="container">
+                <div class="row mb-3">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mb-3">
+                        <div class="card">
+                            <div class="card-header bg-info text-light">
+                                <div class="card-title text-center">
+                                    Solicitacoes Recebidas
+                                </div>
+                            </div>
+                            <div class="card-body text-justify">
+                                <p class="card-text">
+                                    Aceda a pagina de solicitacoes feitas para a UGEA.
+                                    <hr>
+                                    Passos: <br><br>
+                                    
+                                    1 .selecionando do botao Abrir abaixo: <br> <br> 
+                                    Obtem a possibidade de ver todas as solicitacoes. <br><br> 
+                                    Com a possibidade de filtrar as solicitacoes em :
+                                    <br> Deferidas;
+                                    <br> Indeferida.<br> <br> 
+                                    
+                                    Pode tambem desfrutar da funcionalidade  de pesquisa:<br> <br> 
+                                    Atraves do assunto ou um texto descritivo
+                                    da solicitacao.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <a href="/solicitacoesRecebidas" class="btn btn-outline-info form-control">Abrir</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mb-3">
+                        <div class="card">
+                            <div class="card-header bg-info text-light">
+                                <div class="card-title text-center">
+                                    Propostas para DAF
+                                </div>
+                            </div>
+                            <div class="card-body text-justify">
+                                <p class="card-text">
+                                    Aceda a pagina de propostas para a DAF: <hr>
+                                    
+                                    Passos: <br> <br> 
+                                    1. Selecionando o botao Abrir abaixo: <br> <br> 
+                                    Obtem a possibidade de ver todas as propostas.<br> <br> 
+                                    com a possibilidade de filtrar as propostas em :<br> 
+                                    Deferidas; <br> 
+                                    Indeferidas.<br> <br> 
+                                    Pode tambem desfrutar da funcionalidade  de pesquisa:<br> <br> 
+                                    Atraves do assunto ou um texto descritivo
+                                    da proposta.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <a href="/propostas" class="btn btn-outline-info form-control">Abrir</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    
+                </div>
+            </div>
+        </main>
+
+        <footer th:replace="fragmento/fragmento :: footer"></footer>
+
+        <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.js"></script>
+        <script type="text/javascript" src="/js/style.js"></script>
+    </body>
+</html>

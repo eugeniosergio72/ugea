@@ -1,0 +1,48 @@
+create database ugea;
+
+create table tipoUtilizador (
+    codTipUt            int primary key auto_increment,
+    nome                varchar(100)
+)
+create table utilizador (
+    codUtiliador        int primary key auto_increment,
+    codTipUt            int foreign key references tipoUtilizador(codTipoUt),
+    senha               varchar(255),
+    email               varchar(100)
+)
+create table solicitacaoDp (
+    codSoliDp           int primary key auto_increment,
+    codUtiliador        int foreign key references utilizador(codUtiliador),   
+    assunto             varchar(100),
+    decricao            text,
+    ref                 varchar(100),
+    data                date
+)
+create table solicitacaoDpConfirm (
+    codSConf            int primary key auto_increment,
+    codSoliDp           int foreign key references solicitacaoDp(codSoliDp), 
+    codUtiliador        int foreign key references utilizador(codUtiliador), 
+    status              varchar(1),
+    data                datatime
+)
+create table proposta (
+    codProp             int primary key auto_increment,
+    codSoliDp           int foreign key references solicitacaoDp(codSoliDp), 
+    codUtiliador        int foreign key references utilizador(codUtiliador), 
+    arquivoProp         varchar(255),
+    data                datatime
+)
+create table propostaConfirm (
+    codPropConf         int primary key auto_increment,
+    codProp             int foreign key references proposta(codProp), 
+    codUtiliador        int foreign key references utilizador(codUtiliador), 
+    status              varchar(1),
+    data                datatime
+)
+create table firmas (
+    codFirm             int primary key auto_increment,  
+    codUtiliador        int foreign key references utilizador(codUtiliador), 
+    produto             varchar(100),
+    arquivoProdPagos    varchar(255)
+)
+
